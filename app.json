@@ -1,0 +1,17 @@
+{
+  "name": "phithos",
+  "displayName": "phithos",
+  "expo": {
+    "name": "phithos",
+    "slug": "phithos",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
