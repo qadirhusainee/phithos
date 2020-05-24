@@ -1,7 +1,7 @@
 import produce from "immer";
 import actionTypes from "../actionTypes/authTypes";
 
-const initialState = {
+export const initialState = {
   isLoggedIn: false,
   userDetails: {},
   showBaner: true,
@@ -9,7 +9,6 @@ const initialState = {
 
 const authReducer = (state = initialState, action) =>
   produce(state, (draft) => {
-    console.log(action);
     switch (action.type) {
       case actionTypes.UPDATE_LOGGED_IN:
         draft.isLoggedIn = action.payload;

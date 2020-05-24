@@ -23,7 +23,6 @@ const Setting: FunctionComponent = () => {
     dispatch(updateLoggedIn(false));
   };
   const toggleSwitch = (value) => {
-    console.warn("toggleSwitch", value);
     dispatch(updateBaner(value));
   };
 
