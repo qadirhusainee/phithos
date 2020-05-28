@@ -10,21 +10,38 @@ import {
   Dimensions,
 } from "react-native";
 import { isEmulator } from "react-native-device-info";
-
 const { width, height } = Dimensions.get("window");
 
-const Login: FunctionComponent = ({ navigation }) => {
+const CustomBaner: FunctionComponent = ({ navigation }) => {
   const showBaner = useSelector((state) => state.auth.showBaner);
   const [isDevice, setIsDevice] = useState("");
+  const [banerVisible, setBanerVisible] = useState(true);
 
   useEffect(() => {
-    isEmulator().then((value) => setIsDevice(!value));
+    getDeviceInfo();
   }, []);
 
-  if (showBaner) {
+  const getDeviceInfo = async () => {
+    const response = await isEmulator();
+    setIsDevice(!response);
+  };
+
+  if (showBaner && banerVisible) {
     return (
       <View style={styles.container}>
-        <Text>{!isDevice ? "Emulator" : "Device"}</Text>
+        <Text style={{ fontSize: 20, paddingTop: 5 }}>
+          {!isDevice ? "Emulator" : "Device"}
+        </Text>
+        <View
+          style={{
+            width: width,
+            justifyContent: "flex-end",
+            flexDirection: "row",
+            marginRight: 20,
+          }}
+        >
+          <Button onPress={() => setBanerVisible(false)} title="Close" />
+        </View>
       </View>
     );
   } else {
@@ -37,20 +54,12 @@ const styles = StyleSheet.create({
     width: width,
     alignItems: "center",
     justifyContent: "center",
-    height: 50,
-    borderWidth: 1,
+    height: 80,
+    borderWidth: 0.5,
     borderColor: "grey",
-    backgroundColor: "white",
+    backgroundColor: "#f2f2f2",
   },
-  input: {
-    borderWidth: 1,
-    borderColor: "black",
-    borderRadius: 5,
-    width: width - 100,
-    height: 50,
-    padding: 10,
-    marginVertical: 10,
-  },
+
   error: {
     color: "red",
   },
@@ -59,4 +68,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Login;
+export default CustomBaner;

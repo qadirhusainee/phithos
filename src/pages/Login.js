@@ -42,7 +42,7 @@ const Login: FunctionComponent = ({ navigation }) => {
     }
   };
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor:'#fff' }}>
       <Baner />
       <View style={{ flex: 1, alignItems: "center", marginTop: height / 4 }}>
         <TextInput
@@ -51,12 +51,14 @@ const Login: FunctionComponent = ({ navigation }) => {
           onChangeText={setEmail}
           value={email}
           keyboardType="email-address"
+          accessibilityLabel="email"
         />
         <TextInput
           style={styles.input}
           placeholder="password"
           value={password}
           onChangeText={setPassword}
+          accessibilityLabel="password"
         />
         {error ? <Text style={styles.error}>{error}</Text> : <View />}
         <Button

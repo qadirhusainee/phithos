@@ -9,7 +9,6 @@ import { PersistGate } from "redux-persist/integration/react";
 import Route from "./Route";
 import configureStore from "./redux/configureStore";
 
-enableScreens();
 enableES5();
 
 const { store, persistor } = configureStore();
