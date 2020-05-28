@@ -22,7 +22,7 @@ describe("Baner", () => {
   it("Showing device or emulator", async () => {
     const { queryByText } = render(<Baner />);
 
-    const element = queryByText("Emulator");
+    const element = queryByText("Emulator(Android)");
     expect(element).toBeDefined();
   });
 });

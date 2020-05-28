@@ -24,7 +24,7 @@ describe("Setting", () => {
   it("Showing Baner", () => {
     const { queryByText } = render(<Setting />);
 
-    const element = queryByText("Emulator");
+    const element = queryByText("Emulator(Android)");
     expect(element).toBeDefined();
   });
 });

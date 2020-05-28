@@ -30,7 +30,7 @@ exports[`Dashboard Matches Snapshot 1`] = `
         }
       }
     >
-      Emulator
+      Simulator(IOS)
     </Text>
     <View
       style={

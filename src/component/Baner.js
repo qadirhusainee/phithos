@@ -8,6 +8,7 @@ import {
   Button,
   TextInput,
   Dimensions,
+  Platform,
 } from "react-native";
 import { isEmulator } from "react-native-device-info";
 const { width, height } = Dimensions.get("window");
@@ -30,7 +31,11 @@ const CustomBaner: FunctionComponent = ({ navigation }) => {
     return (
       <View style={styles.container}>
         <Text style={{ fontSize: 20, paddingTop: 5 }}>
-          {!isDevice ? "Emulator" : "Device"}
+          {isDevice
+            ? "Device"
+            : Platform.OS == "ios"
+            ? "Simulator(IOS)"
+            : "Emulator(Android)"}
         </Text>
         <View
           style={{

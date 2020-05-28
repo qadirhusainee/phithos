@@ -30,7 +30,7 @@ exports[`Setting Matches Snapshot 1`] = `
         }
       }
     >
-      Emulator
+      Simulator(IOS)
     </Text>
     <View
       style={

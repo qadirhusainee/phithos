@@ -31,7 +31,7 @@ exports[`Login Matches Snapshot 1`] = `
         }
       }
     >
-      Emulator
+      Simulator(IOS)
     </Text>
     <View
       style={
